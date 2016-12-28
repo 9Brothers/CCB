@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html ng-app="ccbApp">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/" />
+  @Styles.Render("~/Content/bootstrap.min.css")  
+</head>
+<body ng-view>
+  @RenderBody()
+
+  @Scripts.Render("~/Scripts/angular.min.js")
+  @Scripts.Render("~/Scripts/angular-route.min.js")
+  @Scripts.Render("~/Scripts/jquery-3.1.1.min.js")
+  @Scripts.Render("~/Scripts/bootstrap.min.js")
+
+  @Scripts.Render("~/Scripts/app.js")
+  @RenderSection("scripts", required: false)
+</body>
+</html>
