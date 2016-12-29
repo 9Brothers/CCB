@@ -1,0 +1,59 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Meninos e Moços
+  </div>
+  <div class="panel-body">
+    <div id="container-meninos" class="clearfix row">
+      <!-- Contagem das continuações de meninos -->
+      <div id="contagem-meninos" class="col-md-8">
+        <!-- Continuação dos meninos -->
+        <div class="form-group" ng-repeat="meninos in vm.mocidade | filter: { gender: 'menino' }">
+          <select class="form-control" ng-model="meninos.gender">
+            <option value="menino" selected>Meninos</option>
+            <option value="moco">Moços</option>
+          </select>
+          <input class="form-control" type="number" min="0" ng-model="meninos.total" ng-value="meninos.total">
+        </div>
+      </div>
+
+      <!-- Somatório de meninos -->
+      <div id="total-meninos" class="col-md-4">
+        <div class="col-xs-10">Total de Meninos</div>
+        <h3 class="col-xs-2 no-mg-tp text-right">{{ (vm.mocidade | filter: { gender: 'menino' }).Sum('total') }}</h3>
+      </div>
+    </div>
+
+    <hr>
+
+    <div id="container-mocos" class="clearfix row">
+      <!-- Contagem das continuações de moços -->
+      <div id="contagem-mocos" class="col-md-8">
+        <!-- Continuação dos moços -->
+        <div class="form-group" ng-repeat="mocos in vm.mocidade | filter: { gender: 'moco' }">
+          <select class="form-control" ng-model="mocos.gender">
+            <option value="menino">Meninos</option>
+            <option value="moco" selected>Moços</option>
+          </select>
+          <input class="form-control" type="number" min="0" ng-model="mocos.total" ng-value="moco.total">
+        </div>
+      </div>
+
+      <!-- Somatório de moços -->
+      <div id="total-mocos" class="col-md-4">
+        <div class="col-xs-10">Total de Moços</div>
+        <h3 class="col-xs-2 no-mg-tp text-right">{{ (vm.mocidade | filter: { gender: 'moco' }).Sum('total') }}</h3>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Total de meninos e moços -->
+    <div id="total-meninos-mocos" class="row">
+      <div class="col-xs-8">Total de Meninos e Moços</div>
+      <h2 class="col-xs-4 no-mg-tp text-right">{{ (vm.mocidade | filter: vm.boyAndYoungManFilter).Sum('total') }}</h2>
+    </div>
+
+    <!-- Adicionar mais uma continuação -->
+    <button type="button" id="adicionar-meninos" class="btn btn-primary" ng-click="vm.addMaleContinuation()">Adicionar continuação</button>
+  </div>
+</div>
