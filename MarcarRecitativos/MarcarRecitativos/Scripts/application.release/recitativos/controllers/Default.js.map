@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["recitativos/controllers/Default.js"],"sourcesContent":["(function () {\r\n  angular.module('ccbApp.controllers')\r\n\r\n    .controller('DefaultCtrl', [\r\n      function () {\r\n\r\n      }\r\n    ])\r\n})();\r\n"],"file":"Default.js"}

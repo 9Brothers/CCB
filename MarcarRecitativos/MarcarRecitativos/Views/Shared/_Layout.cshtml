@@ -5,17 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="/" />
   @Styles.Render("~/Content/bootstrap.min.css")  
-  @Styles.Render("~/Content/site.css")  
+  @Styles.Render("~/Content/site.css")
+
+  @Scripts.Render("~/Scripts/application.build/build-libraries.js")
+  @Scripts.Render("~/Scripts/application.build/build-app.js")
 </head>
 <body ng-view>
   @RenderBody()
-
-  @Scripts.Render("~/Scripts/angular.min.js")
-  @Scripts.Render("~/Scripts/angular-route.min.js")
-  @Scripts.Render("~/Scripts/jquery-3.1.1.min.js")
-  @Scripts.Render("~/Scripts/bootstrap.min.js")
-
-  @Scripts.Render("~/Scripts/app.js")
+  
+  
   @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -5,19 +5,26 @@
   <div class="panel-body">
     <div id="container-meninas" class="clearfix row">
       <!-- Contagem das continuações de meninas -->
-      <div id="contagem-meninas" class="col-md-8">
+      <div id="contagem-meninas" class="clearfix no-mg row col-md-8">
         <!-- Continuação das meninas -->
         <div class="form-group" ng-repeat="meninas in vm.mocidade | filter: { gender: 'menina' }">
-          <select class="form-control" ng-model="meninas.gender">
-            <option value="menina" selected>Meninas</option>
-            <option value="moca">Moças</option>
-          </select>
-          <input class="form-control" type="number" min="0" ng-model="meninas.total" ng-value="meninas.total">
+          <div class="col-xs-11">
+            <div class="col-xs-6">
+              <select class="form-control" ng-model="meninas.gender">
+                <option value="menina" selected>Meninas</option>
+                <option value="moca">Moças</option>
+              </select>
+            </div>
+            <div class="col-xs-6">
+              <input class="form-control" type="number" min="0" ng-model="meninas.total" ng-value="meninas.total">
+            </div>
+          </div>
+          <div class="col-xs-1 glyphicon glyphicon-remove text-center" ng-click="vm.removeContinuation(meninas.$$hashKey)"></div>
         </div>
       </div>
 
       <!-- Somatório de meninas -->
-      <div id="total-meninas" class="col-md-4">
+      <div id="total-meninas" class="clearfix row no-mg col-md-4">
         <div class="col-xs-10">Total de Meninas</div>
         <h3 class="col-xs-2 no-mg-tp text-right">{{ (vm.mocidade | filter: { gender: 'menina' }).Sum('total') }}</h3>
       </div>
@@ -27,19 +34,26 @@
 
     <div id="container-mocas" class="clearfix row">
       <!-- Contagem das continuações de moças -->
-      <div id="contagem-mocas" class="col-md-8">
+      <div id="contagem-mocas" class="clearfix no-mg row col-md-8">
         <!-- Continuação das moças -->
         <div class="form-group" ng-repeat="mocas in vm.mocidade | filter: { gender: 'moca' }">
-          <select class="form-control" ng-model="mocas.gender">
-            <option value="menina">Meninas</option>
-            <option value="moca" selected>Moças</option>
-          </select>
-          <input class="form-control" type="number" min="0" ng-model="mocas.total" ng-value="mocas.total">
+          <div class="col-xs-11">
+            <div class="col-xs-6">
+              <select class="form-control" ng-model="mocas.gender">
+                <option value="menina">Meninas</option>
+                <option value="moca" selected>Moças</option>
+              </select>
+            </div>
+            <div class="col-xs-6">
+              <input class="form-control" type="number" min="0" ng-model="mocas.total" ng-value="mocas.total">
+            </div>
+          </div>
+          <div class="col-xs-1 glyphicon glyphicon-remove text-center" ng-click="vm.removeContinuation(mocas.$$hashKey)"></div>
         </div>
       </div>
 
       <!-- Somatório de moças -->
-      <div id="total-mocas" class="col-md-4">
+      <div id="total-mocas" class="clearfix row no-mg col-md-4">
         <div class="col-xs-10">Total de Moças</div>
         <h3 class="col-xs-2 no-mg-tp text-right">{{ (vm.mocidade | filter: { gender: 'moca' }).Sum('total') }}</h3>
       </div>

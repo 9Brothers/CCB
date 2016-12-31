@@ -8,6 +8,10 @@
   padding: 5px 0;
 }
 
+.no-pd {
+  padding: 0;
+}
+
 .no-mg {
     margin: 0;
 }

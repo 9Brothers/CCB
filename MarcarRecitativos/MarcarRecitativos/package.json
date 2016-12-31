@@ -1,0 +1,23 @@
+{
+  "name": "marcar_recitativos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-concat": "^2.6.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-batch": "^1.0.5",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-wait": "0.0.2",
+    "gulp-watch": "^4.3.11",
+    "jslint": "^0.10.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Heber Teixeira",
+  "license": "ISC"
+}
